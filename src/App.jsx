@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './App.css';
 import Dropdown from './Dropdown';
-import Listbox from './Listbox';
+import List from './List';
 import axios from 'axios';
 
 function Credentials() {
@@ -96,7 +96,7 @@ function App() {
         })
     }
 
-    const listboxClicked = val => {
+    const listClicked = val => {
       const currentTracks = [...tracks.listTrackAPI];
       const trackInfo = currentTracks.filter(t => t.track.id === val);
       setTrackDetail(trackInfo[0].track);
@@ -110,7 +110,7 @@ function App() {
           <button type="submit">
             Search
           </button>
-          <Listbox items={tracks.listTrackAPI} clicked={listboxClicked} />
+          <List items={tracks.listTrackAPI} clicked={listClicked} />
           </div>
       </form>
   )
