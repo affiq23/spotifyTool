@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Dropdown from './Dropdown';
 import List from './List';
+import Detail from './Detail';
 import axios from 'axios';
 
 function Credentials() {
@@ -111,6 +112,7 @@ function App() {
             Search
           </button>
           <List items={tracks.listTrackAPI} clicked={listClicked} />
+          { trackDetail && <Detail {...trackDetail}/>}
           </div>
       </form>
   )
