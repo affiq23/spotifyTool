@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/Dropdown.scss"
 import { useState, useEffect } from "react";
 
 const Dropdown = props => {
@@ -10,8 +11,8 @@ const Dropdown = props => {
     }
     
     return ( 
-        <div>
-            <select value={props.selectedVal} onChange={dropdownChanged}>
+        <div className="Dropdown">
+            <select value={props.selectedVal} onChange={dropdownChanged} className="Dropdown_select">
                 {props.options.map((item, idx) => <option key={idx} value={item.id}>{item.name}</option>)}
             </select>
             <p>{selectedVal}</p>

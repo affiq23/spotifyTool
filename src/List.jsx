@@ -1,4 +1,6 @@
 import React from "react";
+import "./styles/List.scss";
+
 const List = props => {
 
     const clicked = e => {
@@ -7,11 +9,11 @@ const List = props => {
     }
 
     return ( 
-        <div>
+        <div className="list">
             {
                 props.items.map((item, idx) => 
                 <button key={idx} id={item.track.id}
-                    onClick={clicked}
+                    onClick={clicked} className="button"
                 >
                     {item.track.name}
                 </button>)

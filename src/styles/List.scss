@@ -1,0 +1,21 @@
+.list {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
+  }
+  
+  .button {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 10px; /* Adjust the value as needed for the desired spacing */
+    width: 150px; /* Set a fixed width for each button */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: hidden; /* Hide any text that exceeds the button width */
+    text-overflow: ellipsis; /* Display an ellipsis (...) for overflow text */
+    border-radius: 8px;
+    transition: color 0.3s, border-color 0.3s; /* Smooth transition for color changes */
+  
+    &:hover {
+      background-color: darkgreen; /* Change to your desired text color on hover */
+      color: white;
+      border-color: darkgreen; /* Change to your desired border color on hover */
+    }
+  }

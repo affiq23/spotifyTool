@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import './App.css';
+import "./styles/App.scss";
 import Dropdown from './Dropdown';
 import List from './List';
 import Detail from './Detail';
@@ -61,7 +61,7 @@ function App() {
       selectedGenre : val,
       listGenresAPI: genres.listGenresAPI
     })
-    axios(`https://api.spotify.com/v1/browse/categories/${val}/playlists?limit=10`, {
+    axios(`https://api.spotify.com/v1/browse/categories/${val}/playlists?limit=14`, {
       method: "GET",
       headers: { "Authorization" : "Bearer " + token}
   }) 
@@ -85,7 +85,7 @@ function App() {
     const buttonClicked = e => {
       e.preventDefault();
 
-      axios(`https://api.spotify.com/v1/playlists/${playlist.selectedPlaylist}/tracks?limit=10`, {
+      axios(`https://api.spotify.com/v1/playlists/${playlist.selectedPlaylist}/tracks?limit=14`, {
         method: "GET",
         headers: { "Authorization" : "Bearer " + token}
       })
@@ -106,9 +106,10 @@ function App() {
   return (
       <form onSubmit={buttonClicked}>
           <div className="container">
+          <h1 className='h1'>Spotify Track Selector</h1>
           <Dropdown options={genres.listGenresAPI} selectedVal={genres.selectedGenre} changed={genreChanged} /> 
           <Dropdown options={playlist.listPlaylistAPI} selectedVal={playlist.selectedPlaylist} changed={playlistChanged} />
-          <button type="submit">
+          <button type="submit" className='submit-button'>
             Search
           </button>
           <List items={tracks.listTrackAPI} clicked={listClicked} />

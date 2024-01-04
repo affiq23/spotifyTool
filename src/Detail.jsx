@@ -1,15 +1,17 @@
 import React from "react";
+import "./styles/Detail.scss";
+
+
 const Detail = ({album, artists, name}) => {
     return ( 
         <div>
             <div>
-                <img src={album.images[0].url} alt={name} />
+                <label className="song-label" htmlFor={name}>{name}</label>
+                <br />
+                <label className="artist-label" htmlFor={artists[0].name}>{artists[0].name}</label>
             </div>
             <div>
-                <label htmlFor={name}>{name}</label>
-            </div>
-            <div>
-                <label htmlFor={artists[0].name}>{artists[0].name}</label>
+                <img src={album.images[0].url} alt={name} className="image"/>
             </div>
         </div>
      );
